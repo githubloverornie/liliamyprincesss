@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моя кицюнечка</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --dark-brown: #5D4037;
+            --medium-brown: #8B4513;
+            --light-brown: #A1887F;
+            --lighter-brown: #D7CCC8;
+            --cream: #EFEBE9;
+            --beige: #F5F5DC;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--lighter-brown);
+            color: var(--dark-brown);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: var(--cream);
+            box-shadow: 0 0 20px rgba(93, 64, 55, 0.1);
+            border-radius: 15px;
+        }
+
+        .header {
+            background: linear-gradient(to right, var(--dark-brown), var(--medium-brown));
+            color: var(--cream);
+            padding: 2rem;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 8px rgba(93, 64, 55, 0.2);
+        }
+
+        .navigation {
+            background-color: var(--light-brown);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(93, 64, 55, 0.1);
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .nav-list a {
+            color: var(--cream);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            padding: 5px 15px;
+            border-radius: 5px;
+        }
+
+        .nav-list a:hover {
+            background-color: var(--dark-brown);
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            padding: 1.5rem;
+            background-color: var(--lighter-brown);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(93, 64, 55, 0.1);
+        }
+
+        .photo-item {
+            position: relative;
+            padding-bottom: 100%;
+            overflow: hidden;
+            border-radius: 8px;
+            border: 3px solid var(--light-brown);
+            transition: transform 0.3s ease;
+        }
+
+        .photo-item:hover {
+            transform: scale(1.05);
+            border-color: var(--dark-brown);
+        }
+
+        .photo-item img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .sidebar {
+            background-color: var(--cream);
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(93, 64, 55, 0.1);
+            border: 2px solid var(--light-brown);
+        }
+
+        .about-section {
+            background-color: var(--cream);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(93, 64, 55, 0.1);
+            border: 2px solid var(--light-brown);
+        }
+
+        h2, h3 {
+            color: var(--dark-brown);
+            border-bottom: 2px solid var(--light-brown);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .paw-print {
+            position: fixed;
+            width: 30px;
+            height: 30px;
+            background-color: var(--medium-brown);
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0.3;
+            animation: fadeOut 2s forwards;
+        }
+
+        .paw-print::before {
+            content: '🐾';
+            position: absolute;
+            font-size: 20px;
+            color: var(--dark-brown);
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+            }
+        }
+
+        @media screen and (max-width: 1200px) {
+            .container { max-width: 1100px; }
+        }
+
+        @media screen and (max-width: 1190px) {
+            .container { max-width: 1000px; }
+        }
+
+        @media screen and (max-width: 800px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            .photo-gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .nav-list {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
+
+        @media screen and (max-width: 550px) {
+            .photo-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .header { padding: 1rem; }
+        }
+
+        @media screen and (max-width: 440px) {
+            .container { padding: 10px; }
+        }
+
+        @media screen and (max-width: 360px) {
+            .photo-item { padding-bottom: 75%; }
+        }
+
+        @media screen and (max-width: 320px) {
+            .header h1 { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🐱 Кицюнь 🐱</h1>
+            <p>Хочу сказати..</p>
+        </header>
+
+        <nav class="navigation">
+            Хочу сказати, що вибач мене будь ласка, манюнечка моя сололенька, я дуже сильно боюсь тебе втратити, мрію, щоб ти була щасливою, вибач мене за все будь ласка, що роблю боляче, бусь( Хочу як краще, мила, мені і самому не подобається, що ревную, кицю. Я подружусь з усіма, з ким потрібно і будемо разом в майбутньому ходити гуляти, все буде чудово, мишенятко.
+          Вибач мене за все будь ласка, ти мій всесвіт, я дуже сильно кохаю тебе, сонечко ❤️
+        </nav>
+
+        <section class="photo-gallery" id="photos">
+       
+            <div class="photo-item">
+                <img src="" alt="Моє фото 1">
+            </div>
+            <div class="photo-item">
+                <img src="" alt="Моє фото 2">
+            </div>
+            <div class="photo-item">
+                <img src="" alt="Моє фото 3">
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener('mousemove', function(e) {
+            const paw = document.createElement('div');
+            paw.className = 'paw-print';
+            paw.style.left = e.pageX - 15 + 'px';
+            paw.style.top = e.pageY - 15 + 'px';
+            document.body.appendChild(paw);
+
+            setTimeout(() => {
+                paw.remove();
+            }, 2000);
+        });
+    </script>
+</body>
+                                            </html>
